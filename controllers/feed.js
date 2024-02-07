@@ -154,6 +154,7 @@ exports.updatePost = (req, res, next) => {
         throw error;
       }
 
+      // This is authorization
       if (post.creator._id.toString() !== req.userId) {
         const error = new Error("Not authorized!");
         error.statusCode = 403;
